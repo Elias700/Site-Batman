@@ -40,6 +40,8 @@ li{
 
 li:hover{
     color: #D21617;
+    text-decoration: underline;
+    
 }
 
 #logo{
