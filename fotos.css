@@ -27,7 +27,7 @@ header{
     cursor: pointer;
 }
 
-h1{
+#title{
     color: rgb(197, 15, 15);
     display: flex;
     align-items: center;
@@ -59,4 +59,61 @@ img{
 img:hover{
     transform: scale(1.02);
     
+}
+
+
+/* Tablet */
+@media (max-width: 768px){
+
+    header{
+        width: 100%;
+    }
+
+    .fotos1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .fotos2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    img{
+        width: 700px;
+        height: 500px;
+    }
+
+}
+
+
+/* Smartfone */
+@media (max-width: 360px){
+
+    header{
+        width: 100%;
+    }
+
+    .fotos1{
+        gap: 20px;
+    }
+
+    .fotos2{
+        gap: 20px;
+    }
+
+    img{
+        width: 330px;
+        height: 410px; 
+    }
+
+    img:nth-child(1){
+        margin-top: 5px;
+    }
+
+
 }
