@@ -21,8 +21,9 @@ header{
     justify-content: space-evenly;
 }
 
+
 #logo{
-    width: 200px;
+    width: 150px;
     cursor: pointer;
 }
 
@@ -78,11 +79,46 @@ h1{
 
 .footer{
     background-color: rgba(0, 0, 0, 0.799);
-    margin-top: 391px;
+    margin-top: 419px;
 }
 
 #paragrafo{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
     color: rgb(197, 15, 15);
+}
+
+@media (max-width: 768px){
+
+    body{
+        background-size: cover;
+    }
+
+    .contatos{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #whatsapp{
+        
+    }
+     
+     #instagram{
+         
+    }
+     
+     #github{
+         
+    }
+     
+     #linkedin{
+         
+    } 
+
+    .footer{
+        margin-bottom: 150px;
+        display: flex;
+        flex-direction: column;
+    }
+
 }

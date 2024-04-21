@@ -16,14 +16,14 @@ header{
     
 }
 
-.cabeçalho{
+.cabeçalho1{
     display: flex;
     justify-content: space-evenly;
 }
 
-#logo{
-    width: 130px;
-    height: 130px;
+#logo1{
+    width: 150px;
+    height: 90px;
     cursor: pointer;
 }
 
@@ -83,7 +83,7 @@ img:hover{
     }
 
     img{
-        width: 700px;
+        width: 400px;
         height: 500px;
     }
 
