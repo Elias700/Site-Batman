@@ -1,266 +1,334 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
 
+/* REMOVIDO: background-color: black; do * para que as imagens de fundo funcionem */
 *{
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+/* Adicionei o background preto ao body, que é o correto */
+body {
     background-color: black;
-    text-decoration: none;
 }
 
 :root {
-    --color-primary: #c50f0f; /* Vermelho/Laranja de destaque (do H1) */
-    --color-secondary: #ff9900; /* Laranja/Amarelo, inspirado no fundo da imagem */
-    --color-dark: #1a1a1a; /* Preto escuro, para fundos e botões */
-    --color-medium: #4a4a4a; /* Cinza escuro, para inputs e texto secundário */
-    --color-light: #ffffff; /* Branco, para textos principais */
+  --color-primary: #c50f0f; 
+  --color-secondary: #ff9900; 
+  --color-dark: #1a1a1a; 
+  --color-medium: #4a4a4a; 
+  --color-light: #ffffff; 
 }
 
 header{
-    height: 90px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  height: 90px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black; 
 }
 
+/* ÍCONE HAMBÚRGUER (Default escondido) */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-light);
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* MENU DESKTOP/NAV BAR */
 nav{
-    width: 60%;
+  width: 60%;
 }
 
 ul{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 li{
-    list-style: none;
-    color: aliceblue;
-    cursor: pointer;
-    font-size: 19px;
-    transition: .5s;
-   font-family: 'Kam Thmor Pro', sans-serif;
+  list-style: none;
+  color: aliceblue;
+  cursor: pointer;
+  font-size: 23px;
+  transition: .5s;
+  font-family: 'Kdam Thmor Pro', sans-serif; 
 } 
 
 a{
-    color: #fff;
+  color: #fff;
 }
 
 a:hover{
-    color: firebrick;
-    transition: 0.5s;
+  color: var(--color-primary); 
+  transition: 0.5s;
 }
 
 #logo{
-    width: 150px;
-    height: auto;
-    cursor: pointer;
+  width: 150px;
+  height: auto;
+  cursor: pointer;
 }
 
 /* CONTEÚDO PRINCIPAL */
 
 #banner{
-    background-image: url('https://deuclick.com.br/wp-content/uploads/2022/03/the-batman-3.jpg');
-    background-position: 50% 50%;
-    background-size: cover;
-    width: 100%;
-    height: 600px;
+  background-image: url('https://deuclick.com.br/wp-content/uploads/2022/03/the-batman-3.jpg');
+  background-position: 50% 50%;
+  background-size: cover;
+  width: 100%;
+  height: 600px;
 }
 
 #trailer-container{
-    width: 100%;
-    height: 400px;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0; 
 }
 
 .content{
-    width: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .trailer{
-    width: 50%;
+    /* CORREÇÃO DO VÍDEO: Garante que ele se comporte como um bloco e se ajuste */
+    display: block; 
+  width: 50%;
+    max-width: 100%; 
 }
 
 #sinopse{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-left: 30px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 30px;
 }
 
 .description{
-    color: #fff;
-    font-size: 19px;
-    font-family: 'Kam Thmor Pro', sans-serif;
-    width: 70%;
+  color: #fff;
+  font-size: 19px;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  width: 70%;
 }
 
 .button{
-    width: 200px ;
-    height: 60px;
-    background-color: #D21671;
-    color: #fff;
-    padding: 8px 10px;
-    border-radius: 5px; 
-    cursor: pointer;
-    transition: .8s;
-    font-size: 18px;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    font-weight: bold;
-    border: none;
-    outline: none;
-    margin-top: 25px;
-    padding: 20px 50px;
+  width: 200px ;
+  height: 60px;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: 5px; 
+  cursor: pointer;
+  transition: .8s;
+  font-size: 18px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  margin-top: 25px;
 }
 
 .button:hover{
-    background-color: #fff;
-    color: #000;
+  background-color: #fff;
+  color: #000;
 }
 
 /* FOTOS */
 
 .actor-cards-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+    padding-bottom: 50px; 
 }
 
 .cards-content{
-    width: 90%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 20px;
-    column-gap: 40px;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 20px;
+  column-gap: 40px;
 }
 
 .card{
-    width: 100%;
-    height: 600px;
-    background-size: cover;
-    background-position: 50% 50%;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 1s;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0 0 20px 10px;
-    color: #fff;
-    font-size: 17px;
-    font-family: 'Kam Thmor Pro', sans-serif;
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 1s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0 20px 10px;
+  color: #fff;
+  font-size: 17px;
+  font-family: 'Kdam Thmor Pro', sans-serif;
 }
 
 .card:hover{
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .banner-1{
-    background-image: url('https://rollingstone.uol.com.br/media/uploads/robert_pattinson_como_batman_foto_divulgacao_warner.jpg');
+  background-image: url('https://rollingstone.uol.com.br/media/uploads/robert_pattinson_como_batman_foto_divulgacao_warner.jpg');
 }
 
 .banner-2{
-    background-image: url('https://ogimg.infoglobo.com.br/in/25422676-086-2d9/FT1086A/batman_ver22_xlg.jpg');
+  background-image: url('https://ogimg.infoglobo.com.br/in/25422676-086-2d9/FT1086A/batman_ver22_xlg.jpg');
 }
 
 .banner-3{
-    background-image: url('https://www.superherohype.com/wp-content/uploads/sites/4/2019/09/JeffreyWrightTheBatman.jpg');
+  background-image: url('https://www.superherohype.com/wp-content/uploads/sites/4/2019/09/JeffreyWrightTheBatman.jpg');
 }
 
 /* RODA PÉ */
 
 footer{
-    height: 150px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px; 
-    background-color: #000; 
-    padding: 10px 0;
+  height: 150px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; 
+  background-color: #000; 
+  padding: 10px 0;
 }
 
 footer #logo{
-    width: 100px; 
+  width: 100px; 
 }
 
 footer span{
-    color: var(--color-light);
-    font-family:'Kdam Thmor Pro', sans-serif ; 
-    font-size: 0.9rem;
+  color: var(--color-light);
+  font-family:'Kdam Thmor Pro', sans-serif ; 
+  font-size: 0.9rem;
 }
 
 .footer-navigation, .footer-list {
-    display: none;
+  display: none;
 }
 
 
 /* PARTE RESPONSIVA */
 
 @media (max-width: 768px){
-
-    .footer-navigation {
-        display: block;
-    } 
-
-    nav{
-        display: none;
+    /* MENU HAMBÚRGUER */
+    .menu-icon {
+        display: block; 
+        position: absolute;
+        right: 20px;
+        top: 30px;
+        z-index: 10;
     }
 
-    #banner {
-        background-position: cover;
+    nav {
+        display: none; 
     }
 
-    #trailer-container{
+    .menu-mobile {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
-        height: 400px;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%); 
+        transition: transform 0.3s ease-in-out;
+        z-index: 5;
     }
 
-    .content{
-        width: 95%;
-        display: flex;
-        flex-direction: column;
+    .menu-mobile.active {
+        transform: translateX(0); 
     }
 
-    .trailer{
-        width: 100%;
-        margin-top: 150px;
+    .menu-mobile ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
     }
 
-    #sinopse{
-        width: 95%;
-        display: flex;
-        flex-direction: column;
+    .menu-mobile li {
+        font-size: 28px;
+    }
+    
+    header {
         justify-content: space-between;
+        padding: 0 20px;
     }
+    
+    /* CORREÇÃO DO ESPAÇO E LAYOUT DO TRAILER */
+    
+    #trailer-container{
+    height: auto; 
+    padding: 30px 0; 
+  }
 
-    .description{
-        width: 100%;
+  .content{
+    width: 90%; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+  }
+    
+    .trailer{
+    width: 100%;
+    order: 1; 
+        max-width: 100%;
+        height: auto; /* Garante que a altura do vídeo se ajuste (3:2 ou 16:9) */
+  }
+
+  #sinopse{
+    width: 100%;
+    margin-left: 0; 
+    order: 2; 
+        gap: 20px; 
+  }
+
+  .description{
+    width: 100%;
+        margin-bottom: 0; 
+  }
+
+  .button{
+    width: 100%;
+    margin-top: 0; 
+        margin-bottom: 30px; /* Espaço abaixo do botão, separando-o dos cards */
+  }
+
+    .actor-cards-container {
+        margin-top: 0; 
+        padding-bottom: 30px; 
     }
-
-    .button{
-        width: 100%;
-        margin-top: 30px;
-        
-        
-    }
-
-    .cards-content{
-        grid-template-columns: 1fr;
-        margin-top: 150px;
+    
+  .cards-content{
+    grid-template-columns: 1fr;
+    margin-top: 0; 
+        width: 90%;
+        row-gap: 30px; 
+  }
+    
+    #banner {
+        height: 400px;
     }
 }
-
-
-

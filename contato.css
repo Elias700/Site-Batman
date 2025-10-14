@@ -60,7 +60,7 @@ ul{
 li{
     list-style: none;
     cursor: pointer;
-    font-size: 19px;
+    font-size: 23px;
     transition: .5s;
     font-family: 'Kdam Thmor Pro', sans-serif; 
 } 
