@@ -1,118 +1,164 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: #808080; 
+:root {
+  --color-primary: #c50f0f; /* Vermelho/Laranja de destaque (do H1) */
+  --color-secondary: #ff9900; /* Laranja/Amarelo, inspirado no fundo da imagem */
+  --color-dark: #1a1a1a; /* Preto escuro, para fundos e botões */
+  --color-medium: #4a4a4a; /* Cinza escuro, para inputs e texto secundário */
+  --color-light: #ffffff; /* Branco, para textos principais */
+}
+
+body {
+  background-color: #2e2e2e;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  color: #fff;
 }
 
 header{
-    background-color: #000;
-    
+  height: 90px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #000;
 }
 
-.cabeçalho1{
-    display: flex;
-    justify-content: space-evenly;
+nav{
+  width: 60%;
 }
 
-#logo1{
-    width: 150px;
-    height: 90px;
-    cursor: pointer;
+ul{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
-#title{
-    color: rgb(197, 15, 15);
-    display: flex;
-    align-items: center;
-    font-family: 'Kam Thmor Pro', sans-serif;
-    font-size: 40px;
-    cursor: pointer;
+li{
+  list-style: none;
+  color: aliceblue;
+  cursor: pointer;
+  font-size: 19px;
+  transition: .5s;
+  font-family: 'Kam Thmor Pro', sans-serif;
+} 
+
+a{
+  color: #fff;
+  text-decoration: none;
 }
 
-.fotos1{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
+a:hover{
+  color: firebrick;
+  transition: 0.5s;
 }
 
-.fotos2{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
+#titulo{
+  color: var(--color-primary);
+  font-size: 2.5rem;
+  text-align: center;
+  text-shadow: 2px 2px black;
+  margin-top: 20px;
+}
+
+#logo{
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+}
+
+#title {
+  color: rgb(197, 15, 15);
+  font-size: 2rem;
+  text-shadow: 2px 2px black;
 }
 
 img{
-    width: 350px;
-    height: 350px;
-    cursor: pointer;
-    border-radius: 20px;
-    transition: 1s;
+  cursor: pointer;
 }
 
-img:hover{
-    transform: scale(1.02);
+.galeria {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
 }
 
-
-/* Tablet */
-@media (max-width: 768px){
-
-    header{
-        width: 100%;
-    }
-
-    .fotos1{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 50px;
-    }
-
-    .fotos2{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 50px;
-    }
-
-    img{
-        width: 400px;
-        height: 500px;
-    }
-
+.fotos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  width: 100%;
+  max-width: 1200px;
 }
 
+.fotos-grid img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
 
-/* Smartfone */
-@media (max-width: 360px){
+.fotos-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
 
-    header{
-        width: 100%;
-    }
+footer{
+  height: 150px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; 
+  background-color: #000; 
+  padding: 10px 0;
+}
 
-    .fotos1{
-        gap: 20px;
-    }
+footer #logo{
+  width: 100px; 
+}
 
-    .fotos2{
-        gap: 20px;
-    }
+footer span{
+  color: var(--color-light);
+  font-family:'Kdam Thmor Pro', sans-serif ; 
+  font-size: 0.9rem;
+}
 
-    img{
-        width: 330px;
-        height: 410px; 
-    }
+.footer-navigation, .footer-list {
+  display: none;
+}
 
-    img:nth-child(1){
-        margin-top: 5px;
-    }
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  #title {
+    font-size: 1.6rem;
+  }
 
+  #logo1 {
+    width: 100px;
+  }
 
+  .fotos-grid img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #title {
+    font-size: 1.4rem;
+  }
+
+  .fotos-grid img {
+    height: 260px;
+  }
 }

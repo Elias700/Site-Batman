@@ -1,124 +1,231 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
 
-*{
+/* DEFINIÇÃO DE CORES PARA FÁCIL ALTERAÇÃO */
+:root {
+    --color-primary: #c50f0f; /* Vermelho/Laranja de destaque (do H1) */
+    --color-secondary: #ff9900; /* Laranja/Amarelo, inspirado no fundo da imagem */
+    --color-dark: #1a1a1a; /* Preto escuro, para fundos e botões */
+    --color-medium: #4a4a4a; /* Cinza escuro, para inputs e texto secundário */
+    --color-light: #ffffff; /* Branco, para textos principais */
+}
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background-image: url('https://istoe.com.br/wp-content/uploads/2022/03/36.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+body {
+    background-image: url('https://wallpapers.com/images/featured/notebook-batman-sdy407c7vfdf4f8e.jpg');
+    background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    color: var(--color-light); /* Usando a variável */
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    margin: 0; 
 }
 
+.main-content {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    padding: 20px; 
+    text-align: center; 
+}
+
+/* --- CABEÇALHO --- */
 header{
+    height: 90px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     background-color: #000;
 }
 
-.cabeçalho{
-    display: flex;
-    justify-content: space-evenly;
+nav{
+    width: 60%;
 }
 
+ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+li{
+    list-style: none;
+    cursor: pointer;
+    font-size: 19px;
+    transition: .5s;
+    font-family: 'Kdam Thmor Pro', sans-serif; 
+} 
+
+a{
+    color: var(--color-light);
+    text-decoration: none;
+}
+
+a:hover{
+    color: var(--color-primary); /* Destaque ao passar o mouse */
+    transition: 0.5s;
+}
 
 #logo{
     width: 150px;
+    height: auto;
     cursor: pointer;
 }
 
-h1{
-    color: rgb(197, 15, 15);
+h1 {
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px; 
+    /* Adicionando sombra para se destacar no fundo */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* --- FORMULÁRIO (DESIGN ATUALIZADO) --- */
+
+.form {
+    /* Removendo as variáveis antigas e usando as globais */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px; /* Aumentado um pouco o tamanho máximo */
+    padding: 30px; 
+    border-radius: 10px;
+    /* Fundo escuro semi-transparente para destacar sobre a imagem */
+    background-color: rgba(0, 0, 0, 0.7); 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+}
+
+.form .input-span {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form input[type="email"],
+.form input[type="password"] {
+    border-radius: 0.5rem;
+    padding: 1rem 0.75rem;
+    width: 100%;
+    border: none;
     display: flex;
     align-items: center;
-    font-family: 'Kam Thmor Pro', sans-serif;
-    font-size: 40px;
+    gap: 0.5rem;
+    /* Input com fundo escuro sutil e texto branco */
+    background-color: var(--color-dark);
+    color: var(--color-light); 
+    outline: 2px solid var(--color-medium); /* Borda cinza suave */
+}
+
+.form input[type="email"]:focus,
+.form input[type="password"]:focus {
+    outline: 2px solid var(--color-primary); /* Borda primária (vermelha) no foco */
+}
+
+.label {
+    align-self: flex-start;
+    color: var(--color-secondary); /* Cor de destaque (laranja) para o label */
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.form .submit {
+    padding: 1rem 0.75rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 5px; /* Deixei o botão mais retangular */
+    background-color: var(--color-primary); /* Cor principal do Batman (vermelho) */
+    color: var(--color-light);
+    border: none;
     cursor: pointer;
+    transition: all 300ms;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
 }
 
-.contatos{
-  padding: 300px 0 0 700px;
+.form .submit:hover {
+    background-color: var(--color-secondary); /* Destaque laranja no hover */
+    color: var(--color-dark);
 }
 
-#whatsapp{
-   cursor: pointer;
-   transition: 1s;
+.span {
+    text-decoration: none;
+    color: var(--color-light); 
+    font-size: 0.9rem;
 }
 
-#instagram{
-    cursor: pointer;
-    transition: 1s;
+.span a {
+    color: var(--color-secondary); /* Link com cor de destaque laranja */
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-#github{
-    cursor: pointer;
-    transition: 1s;
+.span a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
 }
 
-#linkedin{
-    cursor: pointer;
-    transition: 1s;
+/* --- RODAPÉ --- */
+footer{
+    height: 150px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; 
+    background-color: #000; 
+    padding: 10px 0;
 }
 
-
-#whatsapp:hover{
-    transform: scale(1.09);
+footer #logo{
+    width: 100px; 
 }
 
-#instagram:hover{
-    transform: scale(1.09);
+footer span{
+    color: var(--color-light);
+    font-family:'Kdam Thmor Pro', sans-serif ; 
+    font-size: 0.9rem;
 }
 
-#github:hover{
-    transform: scale(1.09);
+.footer-navigation, .footer-list {
+    display: none;
 }
 
-#linkedin:hover{
-    transform: scale(1.09);
-}
-
-.footer{
-    background-color: rgba(0, 0, 0, 0.799);
-    margin-top: 419px;
-}
-
-#paragrafo{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 50px;
-    color: rgb(197, 15, 15);
-}
-
-@media (max-width: 768px){
-
-    body{
-        background-size: cover;
-    }
-
-    .contatos{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    #whatsapp{
-        
-    }
-     
-     #instagram{
-         
-    }
-     
-     #github{
-         
-    }
-     
-     #linkedin{
-         
-    } 
-
-    .footer{
-        margin-bottom: 150px;
-        display: flex;
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    header{
         flex-direction: column;
+        height: auto;
+        padding: 10px 0;
     }
-
+    nav{
+        width: 90%;
+        margin-top: 10px;
+    }
+    ul{
+        justify-content: space-around;
+    }
+    .form {
+        max-width: 90%; /* Ocupa mais espaço em telas menores */
+    }
 }

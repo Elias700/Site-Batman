@@ -1,7 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
 
-
 *{
     margin: 0;
     padding: 0;
@@ -10,7 +9,13 @@
     text-decoration: none;
 }
 
-/* CABEÇALHO */
+:root {
+    --color-primary: #c50f0f; /* Vermelho/Laranja de destaque (do H1) */
+    --color-secondary: #ff9900; /* Laranja/Amarelo, inspirado no fundo da imagem */
+    --color-dark: #1a1a1a; /* Preto escuro, para fundos e botões */
+    --color-medium: #4a4a4a; /* Cinza escuro, para inputs e texto secundário */
+    --color-light: #ffffff; /* Branco, para textos principais */
+}
 
 header{
     height: 90px;
@@ -38,10 +43,13 @@ li{
    font-family: 'Kam Thmor Pro', sans-serif;
 } 
 
-li:hover{
-    color: #D21617;
-    text-decoration: underline;
-    
+a{
+    color: #fff;
+}
+
+a:hover{
+    color: firebrick;
+    transition: 0.5s;
 }
 
 #logo{
@@ -171,28 +179,30 @@ li:hover{
 /* RODA PÉ */
 
 footer{
-    height: 300px;
-    margin-top: 50px;
+    height: 150px; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 15px; 
+    background-color: #000; 
+    padding: 10px 0;
 }
 
-span{
-    color: #fff;
-    font-family:'Kam Thmor Pro', sans-serif ;
+footer #logo{
+    width: 100px; 
 }
 
-.footer-navigation{
+footer span{
+    color: var(--color-light);
+    font-family:'Kdam Thmor Pro', sans-serif ; 
+    font-size: 0.9rem;
+}
+
+.footer-navigation, .footer-list {
     display: none;
 }
 
-.footer-list{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 /* PARTE RESPONSIVA */
 

@@ -1,83 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
 
-
-*{
-    margin: 0;
-    padding: 0;
+/* ---------------------------- */
+/* RESET E CONFIGURAÇÕES GERAIS */
+/* ---------------------------- */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 
-body{
-    background-image: url('https://w0.peakpx.com/wallpaper/510/951/HD-wallpaper-batman-the-batman-dc-comics-the-batman-movie.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+:root {
+     --color-primary: #c50f0f; /* Vermelho/Laranja de destaque */
+     --color-secondary: #ff9900; /* Laranja/Amarelo */
+     --color-dark: #1a1a1a; /* Preto escuro */
+     --color-medium: #4a4a4a; /* Cinza escuro */
+     --color-light: #ffffff; /* Branco */
 }
 
-.cabeçalho{
-    display: flex;
-    justify-content: space-evenly;
-    background-color: #000;
-    align-items: center;
+body {
+   background-image: url("https://w0.peakpx.com/wallpaper/510/951/HD-wallpaper-batman-the-batman-dc-comics-the-batman-movie.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   font-family: 'Kdam Thmor Pro', sans-serif;
+   color: var(--color-light);
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+
+/* NOVO: ESSENCIAL PARA EMPURRAR O FOOTER */
+main {
+    flex: 1; 
+    display: flex; /* Adicionado para centralizar o #titulo e o .form-section */
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente o conteúdo do main */
+}
+
+/* ---------------------------- */
+/* CABEÇALHO */
+/* ---------------------------- */
+header{
+     height: 90px;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     background-color: #000;
+}
+
+nav{
+     width: 60%;
+}
+
+ul{
+     display: flex;
+     width: 100%;
+     justify-content: space-between;
+}
+
+li{
+     list-style: none;
+     color: aliceblue;
+     cursor: pointer;
+     font-size: 19px;
+     transition: .5s;
+    font-family: 'Kdam Thmor Pro', sans-serif; /* Corrigido */
+} 
+
+a{
+     color: var(--color-light);
+     text-decoration: none;
+}
+
+a:hover{
+     color: var(--color-primary);
+     transition: 0.5s;
 }
 
 #logo{
-    width: 150px;
-    cursor: pointer;
-}
-
-#h1{
-    color: rgb(197, 15, 15);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-.formulario{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 200px;
+     width: 150px;
+     height: auto;
+     cursor: pointer;
 }
 
 
-input{
-    padding: 10px 50px;
-    border-radius: 20px;
-    margin: 10px;
-    cursor: pointer;
+#titulo {
+   color: var(--color-primary);
+   font-size: 2.5rem;
+   text-align: center;
+   text-shadow: 2px 2px black;
+   margin-top: 20px;
 }
 
-textarea{
-    padding:30px;
-    border-radius: 20px;
-    margin: 10px;
-    cursor: pointer;
+/* ---------------------------- */
+/* FORMULÁRIO */
+/* ---------------------------- */
+.form-section {
+   flex-grow: 1; /* Permite que a section ocupe o espaço restante dentro do main */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 40px 20px;
+   width: 100%; /* Garante que a seção use a largura total */
+}
+
+.formulario {
+   background-color: rgba(0, 0, 0, 0.75);
+   padding: 30px;
+   border-radius: 10px;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   max-width: 500px;
+   box-shadow: 0px 0px 20px rgba(197, 15, 15, 0.5);
+}
+
+input:not([type="range"]), /* Exclui o range do estilo de input */
+textarea {
+   width: 100%;
+   padding: 12px;
+   border-radius: 5px;
+   border: none;
+   margin-top: 10px;
+   margin-bottom: 20px;
+   font-size: 1rem;
+   outline: none;
+   background-color: var(--color-dark);
+   color: var(--color-light);
+}
+
+input:not([type="range"]):focus,
+textarea:focus {
+   box-shadow: 0 0 10px var(--color-primary);
+   border: 1px solid var(--color-primary);
+}
+
+textarea {
+   resize: vertical;
+}
+
+.avaliacao {
+   margin-bottom: 25px;
+}
+
+#rangeTitle {
+   display: block;
+   font-size: 1rem;
+   color: var(--color-primary); /* Cor primária para o título */
+   text-shadow: 1px 1px black;
+   margin-bottom: 8px;
+   font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+/* ESTILO DO RANGE SLIDER (Compatível com o tema) */
+#range {
+   -webkit-appearance: none; /* Remove a aparência padrão do WebKit */
+   appearance: none;
+   width: 100%;
+   height: 8px;
+   background: var(--color-dark); /* Cor de fundo da trilha */
+   border-radius: 5px;
+   cursor: pointer;
+   outline: none;
+   margin-top: 10px;
+}
+
+/* Thumb (o "botão" que desliza) */
+#range::-webkit-slider-thumb {
+   -webkit-appearance: none;
+   appearance: none;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   background: var(--color-primary); /* Cor primária */
+   border: 2px solid var(--color-light);
+   cursor: pointer;
+   transition: background 0.3s;
+}
+
+#range::-moz-range-thumb {
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   background: var(--color-primary);
+   border: 2px solid var(--color-light);
+   cursor: pointer;
+   transition: background 0.3s;
+}
+
+#range::-webkit-slider-thumb:hover,
+#range::-moz-range-thumb:hover {
+    background: var(--color-secondary); /* Destaque no hover */
 }
 
 
-#rangeTitle{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    color: rgb(197, 15, 15);
-    text-shadow: 4px 4px black;
+/* ---------------------------- */
+/* BOTÃO */
+/* ---------------------------- */
+button {
+   padding: 15px;
+   font-size: 1.1rem;
+   border-radius: 5px;
+   border: none;
+   color: var(--color-light);
+   cursor: pointer;
+   background-color: var(--color-primary);
+   transition: all 0.3s ease-in-out;
+   font-weight: bold;
 }
 
-#range{
-    margin-left: 190px;
-    padding: 10px;
+button:hover {
+   background-color: var(--color-secondary);
+   color: var(--color-dark);
+   transform: scale(1.02);
 }
 
-button{
-    padding: 15px 60px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    border-radius: 20px;
-    color: black;
-    cursor: pointer;
-    background-color: rgb(146, 23, 23);
+/* ---------------------------- */
+/* RODAPÉ */
+/* ---------------------------- */
+footer{
+     height: 150px; 
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: 15px; 
+     background-color: #000; 
+     padding: 10px 0;
 }
 
-button:hover{
-    background-color: #2f2e2e;
-    color: white;
-    transition: 0.5s;
+footer #logo{
+     width: 100px; 
+}
+
+footer span{
+     color: var(--color-light);
+     font-family:'Kdam Thmor Pro', sans-serif ; 
+     font-size: 0.9rem;
+}
+
+.footer-navigation, .footer-list {
+     display: none;
+}
+
+/* ---------------------------- */
+/* RESPONSIVIDADE */
+/* ---------------------------- */
+
+/* Dispositivos pequenos (mobile) */
+@media (max-width: 480px) {
+   #titulo {
+     font-size: 1.8rem;
+   }
+
+   #logo {
+     width: 90px;
+   }
+
+   .formulario {
+     padding: 20px;
+   }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+   #titulo {
+     font-size: 2.2rem;
+   }
+
+   .formulario {
+     max-width: 450px;
+   }
+}
+
+/* Desktops */
+@media (min-width: 769px) {
+   #titulo {
+     font-size: 2.5rem;
+   }
 }
