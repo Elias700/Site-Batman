@@ -37,21 +37,37 @@
     </header>
 
     <main class="main-content">
-        <h1>Contato</h1>
         <form class="form">
+             <span class="input-span">
+                <label for="email" class="label">Nome</label>
+                <input type="name" name="name" id="name" placeholder="Digite seu nome" required/>
+            </span>
             <span class="input-span">
                 <label for="email" class="label">Email</label>
-                <input type="email" name="email" id="email"
-            /></span>
+                <input type="email" name="email" id="email" placeholder="Digite seu email" required/>
+            </span>
             <span class="input-span">
-                <label for="password" class="label">Password</label>
-                <input type="password" name="password" id="password"
-            /></span>
-            <span class="span"><a href="#">Forgot password?</a></span>
-            <input class="submit" type="submit" value="Log in" />
-            <span class="span">Don't have an account? <a href="#">Sign up</a></span>
+                <label for="password" class="label">Telefone</label>
+                <input type="number" name="number" id="number" placeholder="Digite seu número" required/>
+            </span>
+
+            <span class="input-span">
+                <label for="message" class="label">Mensagem</label>
+                <textarea 
+                    name="message" 
+                    id="message" 
+                    placeholder="Digite sua mensagem" 
+                    required 
+                    rows="5"
+                    class="textarea-custom"  
+                    aria-required="true"
+                ></textarea>
+            </span>
+
+            <button class="submit" type="submit">Enviar</button>
         </form>
     </main>
+
     <footer>
         <img id="logo" src="./itens/logo_batman.jpg" alt="Logo Batman">
         <span>2025 © Todos os direitos reservados - Elias Ribeiro</span>

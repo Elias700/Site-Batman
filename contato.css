@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
 
-/* DEFINIÇÃO DE CORES PARA FÁCIL ALTERAÇÃO */
 :root {
-    --color-primary: #c50f0f; /* Vermelho/Laranja de destaque (do H1) */
-    --color-secondary: #ff9900; /* Laranja/Amarelo, inspirado no fundo da imagem */
-    --color-dark: #1a1a1a; /* Preto escuro, para fundos e botões */
-    --color-medium: #4a4a4a; /* Cinza escuro, para inputs e texto secundário */
-    --color-light: #ffffff; /* Branco, para textos principais */
+    --color-primary: #c50f0f; 
+    --color-secondary: #ff9900; 
+    --color-dark: #1a1a1a; 
+    --color-medium: #4a4a4a; 
+    --color-light: #ffffff; 
 }
 
 * {
@@ -21,7 +20,7 @@ body {
     background-size: cover; 
     background-repeat: no-repeat; 
     font-family: 'Kdam Thmor Pro', sans-serif;
-    color: var(--color-light); /* Usando a variável */
+    color: var(--color-light); 
     min-height: 100vh; 
     display: flex; 
     flex-direction: column; 
@@ -38,7 +37,6 @@ body {
     text-align: center; 
 }
 
-/* --- CABEÇALHO --- */
 header{
     height: 90px;
     display: flex;
@@ -71,7 +69,7 @@ a{
 }
 
 a:hover{
-    color: var(--color-primary); /* Destaque ao passar o mouse */
+    color: var(--color-primary); 
     transition: 0.5s;
 }
 
@@ -87,25 +85,20 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 20px; 
-    /* Adicionando sombra para se destacar no fundo */
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
-/* --- FORMULÁRIO (DESIGN ATUALIZADO) --- */
-
 .form {
-    /* Removendo as variáveis antigas e usando as globais */
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     width: 100%;
-    max-width: 400px; /* Aumentado um pouco o tamanho máximo */
+    max-width: 400px; 
     padding: 30px; 
     border-radius: 10px;
-    /* Fundo escuro semi-transparente para destacar sobre a imagem */
     background-color: rgba(0, 0, 0, 0.7); 
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
 }
 
 .form .input-span {
@@ -116,28 +109,44 @@ h1 {
 }
 
 .form input[type="email"],
-.form input[type="password"] {
+.form input[type="number"],
+.form input[type="name"] {
     border-radius: 0.5rem;
     padding: 1rem 0.75rem;
     width: 100%;
     border: none;
-    display: flex;
-    align-items: center;
+    display: flex; 
+    align-items: center; 
     gap: 0.5rem;
-    /* Input com fundo escuro sutil e texto branco */
     background-color: var(--color-dark);
-    color: var(--color-light); 
-    outline: 2px solid var(--color-medium); /* Borda cinza suave */
+    color: var(--color-secondary);  
+    outline: 2px solid var(--color-medium); 
+}
+
+.form textarea,
+.form .textarea-custom { 
+    border-radius: 0.5rem;
+    padding: 1rem 0.75rem;
+    width: 100%;
+    border: none;
+    background-color: var(--color-dark);
+    color: var(--color-secondary); 
+    outline: 2px solid var(--color-medium); 
+    resize: vertical;
+    display: block; 
+    text-align: left; 
 }
 
 .form input[type="email"]:focus,
-.form input[type="password"]:focus {
-    outline: 2px solid var(--color-primary); /* Borda primária (vermelha) no foco */
+.form input[type="number"]:focus,
+.form input[type="name"]:focus,
+.form textarea:focus { 
+  outline: 2px solid var(--color-primary); 
 }
 
 .label {
     align-self: flex-start;
-    color: var(--color-secondary); /* Cor de destaque (laranja) para o label */
+    color: var(--color-secondary); 
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.8rem;
@@ -151,8 +160,8 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    border-radius: 5px; /* Deixei o botão mais retangular */
-    background-color: var(--color-primary); /* Cor principal do Batman (vermelho) */
+    border-radius: 5px; 
+    background-color: var(--color-primary); 
     color: var(--color-light);
     border: none;
     cursor: pointer;
@@ -164,7 +173,7 @@ h1 {
 }
 
 .form .submit:hover {
-    background-color: var(--color-secondary); /* Destaque laranja no hover */
+    background-color: var(--color-secondary); 
     color: var(--color-dark);
 }
 
@@ -175,7 +184,7 @@ h1 {
 }
 
 .span a {
-    color: var(--color-secondary); /* Link com cor de destaque laranja */
+    color: var(--color-secondary); 
     text-decoration: none;
     transition: 0.3s;
 }
@@ -185,7 +194,6 @@ h1 {
     text-decoration: underline;
 }
 
-/* --- RODAPÉ --- */
 footer{
     height: 150px; 
     display: flex;
@@ -211,7 +219,6 @@ footer span{
     display: none;
 }
 
-/* --- RESPONSIVIDADE --- */
 @media (max-width: 768px) {
     header{
         flex-direction: column;
@@ -226,6 +233,6 @@ footer span{
         justify-content: space-around;
     }
     .form {
-        max-width: 90%; /* Ocupa mais espaço em telas menores */
+        max-width: 90%; 
     }
 }
