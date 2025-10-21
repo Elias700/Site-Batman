@@ -1,37 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
 
 * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 :root {
-   --color-primary: #c50f0f; 
-   --color-secondary: #ff9900; 
-   --color-dark: #1a1a1a; 
-   --color-medium: #4a4a4a; 
-   --color-light: #ffffff; 
+  --color-primary: #c50f0f; 
+  --color-secondary: #ff9900; 
+  --color-dark: #1a1a1a; 
+  --color-medium: #4a4a4a; 
+  --color-light: #ffffff; 
 }
 
 body {
-   background-image: url("https://w0.peakpx.com/wallpaper/510/951/HD-wallpaper-batman-the-batman-dc-comics-the-batman-movie.jpg");
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center;
-   font-family: 'Kdam Thmor Pro', sans-serif;
-   color: var(--color-light);
-   min-height: 100vh;
-   display: flex;
-   flex-direction: column;
+  background-image: url("https://w0.peakpx.com/wallpaper/510/951/HD-wallpaper-batman-the-batman-dc-comics-the-batman-movie.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  color: var(--color-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
-   flex: 1; 
-   display: flex; 
-   flex-direction: column;
-   align-items: center; 
+  flex: 1; 
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
 }
 
 header{
@@ -91,150 +91,150 @@ a:hover{
 }
 
 #titulo {
-   color: var(--color-primary);
-   font-size: 2.5rem;
-   text-align: center;
-   text-shadow: 2px 2px black;
-   margin-top: 20px;
+  color: var(--color-primary);
+  font-size: 2.5rem;
+  text-align: center;
+  text-shadow: 2px 2px black;
+  margin-top: 20px;
 }
 
 .form-section {
-   flex-grow: 1; 
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding: 40px 20px;
-   width: 100%; 
+  flex-grow: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  width: 100%; 
 }
 
 .formulario {
-   background-color: rgba(0, 0, 0, 0.75);
-   padding: 30px;
-   border-radius: 10px;
-   display: flex;
-   flex-direction: column;
-   width: 100%;
-   max-width: 500px;
-   box-shadow: 0px 0px 20px rgba(197, 15, 15, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0px 0px 20px rgba(197, 15, 15, 0.5);
 }
 
 input:not([type="range"]), 
 textarea {
-   width: 100%;
-   padding: 12px;
-   border-radius: 5px;
-   border: none;
-   margin-top: 10px;
-   margin-bottom: 20px;
-   font-size: 1rem;
-   outline: none;
-   background-color: var(--color-dark);
-   color: var(--color-primary);
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  outline: none;
+  background-color: var(--color-dark);
+  color: var(--color-primary);
 }
 
 input:not([type="range"]):focus,
 textarea:focus {
-   box-shadow: 0 0 10px var(--color-primary);
-   border: 1px solid var(--color-primary);
+  box-shadow: 0 0 10px var(--color-primary);
+  border: 1px solid var(--color-primary);
 }
 
 textarea {
-   resize: vertical;
+  resize: vertical;
 }
 
 .avaliacao {
-   margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 #rangeTitle {
-   display: block;
-   font-size: 1rem;
-   color: var(--color-primary); 
-   text-shadow: 1px 1px black;
-   margin-bottom: 8px;
-   font-family: 'Kdam Thmor Pro', sans-serif;
+  display: block;
+  font-size: 1rem;
+  color: var(--color-primary); 
+  text-shadow: 1px 1px black;
+  margin-bottom: 8px;
+  font-family: 'Kdam Thmor Pro', sans-serif;
 }
 
 #range {
-   -webkit-appearance: none; 
-   appearance: none;
-   width: 100%;
-   height: 8px;
-   background: var(--color-dark); 
-   border-radius: 5px;
-   cursor: pointer;
-   outline: none;
-   margin-top: 10px;
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: var(--color-dark); 
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  margin-top: 10px;
 }
 
 #range::-webkit-slider-thumb {
-   -webkit-appearance: none;
-   appearance: none;
-   width: 20px;
-   height: 20px;
-   border-radius: 50%;
-   background: var(--color-primary);
-   border: 2px solid var(--color-light);
-   cursor: pointer;
-   transition: background 0.3s;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  border: 2px solid var(--color-light);
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 #range::-moz-range-thumb {
-   width: 20px;
-   height: 20px;
-   border-radius: 50%;
-   background: var(--color-primary);
-   border: 2px solid var(--color-light);
-   cursor: pointer;
-   transition: background 0.3s;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  border: 2px solid var(--color-light);
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 #range::-webkit-slider-thumb:hover,
 #range::-moz-range-thumb:hover {
-    background: var(--color-secondary); 
+  background: var(--color-secondary); 
 }
 
 button {
-   padding: 15px;
-   font-size: 1.1rem;
-   border-radius: 5px;
-   border: none;
-   color: var(--color-light);
-   cursor: pointer;
-   background-color: var(--color-primary);
-   transition: all 0.3s ease-in-out;
-   font-weight: bold;
+  padding: 15px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  border: none;
+  color: var(--color-light);
+  cursor: pointer;
+  background-color: var(--color-primary);
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
 }
 
 button:hover {
-   background-color: var(--color-secondary);
-   color: var(--color-dark);
-   transform: scale(1.02);
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
+  transform: scale(1.02);
 }
 
 footer{
-     height: 150px; 
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     gap: 15px; 
-     background-color: #000; 
-     padding: 10px 0;
+    height: 150px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; 
+    background-color: #000; 
+    padding: 10px 0;
 }
 
 footer #logo{
-     width: 100px; 
+  width: 100px; 
 }
 
 footer span{
-     color: var(--color-light);
-     font-family:'Kdam Thmor Pro', sans-serif ; 
-     font-size: 0.9rem;
+    color: var(--color-light);
+    font-family:'Kdam Thmor Pro', sans-serif ; 
+    font-size: 0.9rem;
 }
 
 .footer-navigation, .footer-list {
-     display: none;
+  display: none;
 }
 
 @media (max-width: 480px) {
