@@ -4,14 +4,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 :root {
-  --color-primary: #c50f0f; /* Vermelho/Laranja de destaque (do H1) */
-  --color-secondary: #ff9900; /* Laranja/Amarelo, inspirado no fundo da imagem */
-  --color-dark: #1a1a1a; /* Preto escuro, para fundos e botões */
-  --color-medium: #4a4a4a; /* Cinza escuro, para inputs e texto secundário */
-  --color-light: #ffffff; /* Branco, para textos principais */
+  --color-primary: #c50f0f; 
+  --color-secondary: #ff9900; 
+  --color-dark: #1a1a1a; 
+  --color-medium: #4a4a4a; 
+  --color-light: #ffffff; 
 }
 
 body {
@@ -25,7 +26,21 @@ header{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #000;
+  background-color: black; 
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-light);
+  margin: 5px 0;
+  transition: 0.4s;
 }
 
 nav{
@@ -44,25 +59,16 @@ li{
   cursor: pointer;
   font-size: 23px;
   transition: .5s;
-  font-family: 'Kdam Thmor Pro', sans-serif;
+  font-family: 'Kdam Thmor Pro', sans-serif; 
 } 
 
 a{
   color: #fff;
-  text-decoration: none;
 }
 
 a:hover{
-  color: firebrick;
+  color: var(--color-primary); 
   transition: 0.5s;
-}
-
-#titulo{
-  color: var(--color-primary);
-  font-size: 2.5rem;
-  text-align: center;
-  text-shadow: 2px 2px black;
-  margin-top: 20px;
 }
 
 #logo{
@@ -71,10 +77,9 @@ a:hover{
   cursor: pointer;
 }
 
-#title {
-  color: rgb(197, 15, 15);
-  font-size: 2rem;
-  text-shadow: 2px 2px black;
+#titulo{
+  text-align: center;
+  padding: 20px;
 }
 
 img{
@@ -135,6 +140,52 @@ footer span{
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
+  .menu-icon {
+    display: block; 
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    z-index: 10;
+  }
+
+  nav {
+    display: none; 
+  }
+
+  .menu-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%); 
+    transition: transform 0.3s ease-in-out;
+    z-index: 5;
+  }
+
+  .menu-mobile.active {
+    transform: translateX(0); 
+  }
+
+  .menu-mobile ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .menu-mobile li {
+    font-size: 28px;
+  }
+    
+  header {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
   #title {
     font-size: 1.6rem;
   }
